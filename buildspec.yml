@@ -13,7 +13,7 @@ phases:
     commands:
       # S3에 빌드 결과 동기화(정적 호스팅 루트에 index.html 등 파일 업로드)
       - aws s3 sync ./dist s3://my-react-app-frontend-ghdwpaks --delete
-      # CloudFront 캐시 무효화 (즉시 새 컨텐츠 제공)
+      # CloudFront 캐시 무효화
       - aws cloudfront create-invalidation --distribution-id E2GKXOW93XW11B --paths "/*"
 
 artifacts:
